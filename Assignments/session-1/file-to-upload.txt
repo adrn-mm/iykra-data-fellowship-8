@@ -1,1 +1,0 @@
-File ini akan saya upload ke github terlebih dahulu, lalu saya gunakan link github untuk diupload ke GCS. 
