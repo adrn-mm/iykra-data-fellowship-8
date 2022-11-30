@@ -1,5 +1,5 @@
-# IYKRA Data Fellowship 8 Program Assigment 1
-## Assigment Objective
+# IYKRA DF 8 Program Assigmnent 1 - Adrian Maulana Muhammad
+## Assignment Objective
 Create a python script which can upload a file from the internet to Google Cloud Storage (Bonus point if you use Docker)
 ## Project Description
 This project is mainly divided into two tasks:
