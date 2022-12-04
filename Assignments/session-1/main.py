@@ -31,9 +31,7 @@ def upload_file(file_url, project_id, bucket_id, file_name):
 
 def main():
     """The main function"""
-    os.environ[
-        "GOOGLE_APPLICATION_CREDENTIALS"
-    ] = "./application_default_credentials.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "./google_credentials.json"
     my_url = "https://example-files.online-convert.com/document/txt/example.txt"
     my_project = "data-fellowship-8-adrian"
     my_bucket = "dummy-bucket-adrian"

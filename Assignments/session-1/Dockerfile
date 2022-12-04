@@ -2,7 +2,7 @@ FROM python:3.8
 
 ADD main.py .
 
-ADD application_default_credentials.json .
+ADD google_credentials.json .
 
 RUN pip install google-cloud-storage
 
