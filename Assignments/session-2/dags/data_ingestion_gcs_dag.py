@@ -41,14 +41,15 @@ def call_dataset_task(dataset_url, ti):
     ti.xcom_push(key="data_json", value=data_json)
 
 
-def save_as_csv():
+def save_as_csv(path_to_local_home, dataset_file, ti):
     """
     save the data to csv
     """
-    data_file = open(dataset_file, "w")
+    data_file = open("{}/{}".format(path_to_local_home, dataset_file), "w")
     csv_writer = csv.writer(data_file)
     count = 0
-    for emp in parse_json["data"]:
+    data_json = ti.xcom_pull(key="data_json", task_ids="call_dataset_task")
+    for emp in data_json:
         if count == 0:  # Writing headers of CSV file
             header = emp.keys()
             csv_writer.writerow(header)
@@ -104,9 +105,19 @@ with DAG(
     tags=["dtc-de"],
 ) as dag:
 
-    download_dataset_task = BashOperator(
-        task_id="download_dataset_task",
-        bash_command=f"curl -sSL {dataset_url} > {path_to_local_home}/{dataset_file}",
+    call_dataset_task = PythonOperator(
+        task_id="call_dataset_task",
+        python_callable=call_dataset_task,
+        op_kwargs={"dataset_url": dataset_url},
+    )
+
+    save_as_csv = PythonOperator(
+        task_id="save_as_csv",
+        python_callable=save_as_csv,
+        op_kwargs={
+            "path_to_local_home": path_to_local_home,
+            "dataset_file": dataset_file,
+        },
     )
 
     format_to_parquet_task = PythonOperator(
@@ -143,7 +154,8 @@ with DAG(
     )
 
     (
-        download_dataset_task
+        call_dataset_task
+        >> save_as_csv
         >> format_to_parquet_task
         >> local_to_gcs_task
         >> bigquery_external_table_task
