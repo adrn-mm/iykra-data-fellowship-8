@@ -6,3 +6,4 @@ From this public table `data-to-insights.ecommerce.rev_transactions`. Create an 
 - The data `data-to-insights.ecommerce.rev_transactions` has changed its id to `bigquery-public-data.google_analytics_sample`.
 ### The Query
 - link to my query: https://console.cloud.google.com/bigquery?sq=172286942495:e1f2fd56d4494c3882aec09133dc02a7
+# Work in Progress
