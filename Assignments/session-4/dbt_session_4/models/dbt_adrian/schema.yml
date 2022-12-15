@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dbt-adrian
+    description: 'Dataset for session 5 assignment'
+    database: dbt_adrian
+    tables:
+      - name: ny_taxi_trips_2019_01 
+        description: 'NY Taxi Trips for January 2019'
