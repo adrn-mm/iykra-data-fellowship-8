@@ -13,4 +13,9 @@ My dashboard shows the total record count, passenger count, trip distance, total
 ## Part 2: Installing PySpark
 - I install PySpark using PIP. the command looks like this: `pip install pyspark`
 - The PySpark Version I have installed is as follow:
+<<<<<<< HEAD
 ![PySpark Screenshot](pyspark-ver.png)
+=======
+
+![PySpark Screenshot](pyspark-ver.png)
+>>>>>>> 59610785891ddda42f7cc1f37004e81488231799
