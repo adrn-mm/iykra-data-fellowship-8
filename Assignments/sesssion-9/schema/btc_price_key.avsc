@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "namespace": "TrainingDataMD",
+  "name": "BTCPriceKey",
+  "fields": [
+    {
+      "name": "Date",
+      "type": "string"
+    }
+  ]
+}
