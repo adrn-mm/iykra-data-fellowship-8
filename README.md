@@ -10,7 +10,3 @@
 8. Avro and Schema Registry (Streaming Processing)
 9. Kafka Streams (Streaming Processing)
 10. Final Project
-
-## Resource
-- [Hands-on Session](https://www.youtube.com/playlist?list=PL69DWZAF6m8T2YAteKCuL3h3SpCyG6471)
-- [Reading Materials](https://drive.google.com/drive/folders/1DqV-TaOr3GeLK-NCw5agu1NjOTxqis8r?usp=share_link)
